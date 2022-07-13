@@ -18,8 +18,7 @@ module.exports = {
     overlay: {
       warnings: false,
       errors: true
-    },
-    proxy: {}
+    }
   },
   // css相关配置
   css: {
@@ -30,6 +29,7 @@ module.exports = {
     // 启用 CSS modules for all css / pre-processor files.
     // modules: false,
     loaderOptions: {
+
       postcss: {
         plugins: [
           require('postcss-px-to-viewport')({
@@ -37,7 +37,7 @@ module.exports = {
             viewportHeight: 1334,
             unitPrecision: 3,
             viewportUnit: 'vw',
-            selectorBlackList: ['.ignore', '.hairlines'],
+            selectorBlackList: ['.ignore', '.hairlines', '.vant-'],
             minPixelValue: 1,
             mediaQuery: false
           })
