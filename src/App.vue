@@ -9,8 +9,8 @@
       <router-view v-if="!$route.meta.keepAlive" />
     </transition>
     <van-tabbar v-model="tabberActive">
-      <van-tabbar-item name="home" icon="wap-home">首页</van-tabbar-item>
-      <van-tabbar-item name="apps" icon="apps-o">分类</van-tabbar-item>
+      <van-tabbar-item name="home" icon="wap-home" to="/">首页</van-tabbar-item>
+      <van-tabbar-item name="apps" icon="apps-o" to="/classify">分类</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
@@ -46,8 +46,8 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
+  background: #ffffff;
 }
 
 .slide-right-enter-active,
@@ -75,5 +75,8 @@ export default {
 .slide-left-leave-active{
   opacity: 0;
   transform: translate3d(-100%, 0, 0);
+}
+p {
+  margin: 0;
 }
 </style>
