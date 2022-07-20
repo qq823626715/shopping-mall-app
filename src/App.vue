@@ -22,21 +22,21 @@ export default {
   data() {
     return {
       tabberActive: 'home',
-      transitionName: 'slide-left'
+      transitionName: ''
     }
   },
   watch: {
-    $route(to, from) {
-      // 有主级到次级
-      if (to.meta.index > from.meta.index) {
-        this.transitionName = 'slide-left' // 向左滑动
-      } else if (to.meta.index < from.meta.index) {
-        // 由次级到主级
-        this.transitionName = 'slide-right'
-      } else {
-        this.transitionName = '' // 同级无过渡效果
-      }
-    }
+    // $route(to, from) {
+    //   // 有主级到次级
+    //   if (to.meta.index > from.meta.index) {
+    //     this.transitionName = 'slide-left' // 向左滑动
+    //   } else if (to.meta.index < from.meta.index) {
+    //     // 由次级到主级
+    //     this.transitionName = 'slide-right'
+    //   } else {
+    //     this.transitionName = '' // 同级无过渡效果
+    //   }
+    // }
   }
 }
 </script>

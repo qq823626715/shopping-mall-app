@@ -9,7 +9,7 @@
     <div v-for="group in 3" :key="`commodity-group${group}`" class="commodity-group">
       <van-cell title="分组名称" title-class="group-cell__title" value-class="group-cell__value" value="查看更多" is-link :border="false" />
       <div class="commodity-group__content">
-        <div v-for="item in 9" :key="`commodity-item${item}`" class="commodity-item">
+        <div v-for="item in 9" :ref="`commodityItem${group}${item}`" :key="`commodity-item${group}${item}`" class="commodity-item" @click.prevent="handleCommodityClick($event)">
           <van-image class="commodity-item__image" src="https://img01.yzcdn.cn/vant/apple-1.jpg" />
           <p class="commodity-item__name van-multi-ellipsis--l2">商品表体</p>
           <p class="commodity-item__price">￥100.00</p>
@@ -26,6 +26,11 @@ export default {
   data() {
     return {
       tabberActive: 'home'
+    }
+  },
+  methods: {
+    handleCommodityClick(el) {
+      this.$router.push({ name: 'Classify', params: { domRect: el.currentTarget.getBoundingClientRect() }})
     }
   }
 }
